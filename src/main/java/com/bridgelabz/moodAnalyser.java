@@ -5,11 +5,25 @@ package com.bridgelabz;
 * Date : 18/10/21
 * */
 public class moodAnalyser {
+    private String message;
+    // default constructor
+    public moodAnalyser(){
+    }
+    // parameterized constructor
+    public moodAnalyser(String message) {
+        this.message = message;
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to mood analyser Program");
     }
-
+    //This method is created for implementing test cases which does not use parameterized constructor
     public String analyseMood(String message) {
+        this.message = message;
+        return analyseMood();
+    }
+    //This method is created for implementing test cases which uses parameterized constructor
+    public String analyseMood() {
         if (message.contains("Sad"))
             return "SAD";
         else
