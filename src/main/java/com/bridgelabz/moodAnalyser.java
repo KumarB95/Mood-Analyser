@@ -24,9 +24,13 @@ public class moodAnalyser {
     }
     //This method is created for implementing test cases which uses parameterized constructor
     public String analyseMood() {
-        if (message.contains("Sad"))
-            return "SAD";
-        else
+        try {
+            if (message.contains("Sad"))
+                return "SAD";
+            else
+                return "HAPPY";
+        }catch (NullPointerException exception){
             return "HAPPY";
+        }
     }
 }
