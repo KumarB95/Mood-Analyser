@@ -25,11 +25,13 @@ public class moodAnalyser {
     //This method is created for implementing test cases which uses parameterized constructor
     public String analyseMood()throws moodAnalysisException {
         try {
+            if (message.length() == 0)
+                throw new moodAnalysisException(moodAnalysisException.ExceptionType.ENTERED_EMPTY, "Please enter proper message");
             if (message.contains("Sad"))
                 return "SAD";
             else
                 return "HAPPY";
-        }catch (NullPointerException exception){
+        } catch (NullPointerException exception) {
             throw new moodAnalysisException(moodAnalysisException.ExceptionType.ENTERED_NULL, "Please enter proper message");
         }
     }

@@ -73,4 +73,13 @@ public class MoodAnalyserTest {
             Assertions.assertEquals(moodAnalysisException.ExceptionType.ENTERED_NULL, e.type);
         }
     }
+    @Test
+    void givenEmptyMood_ShouldThrow_MoodAnalysisException() {
+        moodAnalyser moodAnalyser = new moodAnalyser("");
+        try {
+            moodAnalyser.analyseMood();
+        } catch (moodAnalysisException e) {
+            Assertions.assertEquals(moodAnalysisException.ExceptionType.ENTERED_EMPTY, e.type);
+        }
+    }
 }

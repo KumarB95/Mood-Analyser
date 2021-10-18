@@ -5,7 +5,7 @@ class moodAnalysisException extends Exception{
 
     // to inform user whether the mood is null
     enum ExceptionType {
-        ENTERED_NULL
+        ENTERED_NULL,ENTERED_EMPTY
     }
 
     public moodAnalysisException(ExceptionType type, String message) {
